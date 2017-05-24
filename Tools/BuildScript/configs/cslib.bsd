@@ -48,7 +48,7 @@ configurations {
         buildOptions {
             optimize = true
             publicSign = true
-            keyFile = ${credentialDir}'/Credential/EcmaPrivateKey.snk'
+            keyFile = ${credentialDir}'/EcmaPrivateKey.snk'
         }
     }
 }
