@@ -1,0 +1,15 @@
+#include cslib,net462
+projectType = 'dotnet'
+frameworks {
+	net462 {
+		frameworkAssemblies {
+			'System.Net.Http' = '4.0.0'
+			'System.Configuration' = '4.0.0'
+		}
+		dependencies {
+		    'Standard.Data.Japson' {
+        		target = 'project'
+        	}
+		}
+	}
+}

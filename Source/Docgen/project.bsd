@@ -1,0 +1,8 @@
+#include autodoc
+projectType = 'script'
+templates {
+	'*.pstmpl' {
+		outputDir = ${repoDir}
+		dataPath = 'autodoc'
+	}
+}

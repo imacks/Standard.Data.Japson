@@ -1,0 +1,13 @@
+#include cslib,net462,netstandard1_3
+projectType = 'dotnet'
+description = 'Lizoc Standard Framework (data component - Japson)'
+packOptions {
+	tags = ['standard', 'data', 'japson']
+}
+frameworks {
+	net462 {
+		frameworkAssemblies {
+			'System.Net.Http' = '4.0.0'
+		}
+	}
+}

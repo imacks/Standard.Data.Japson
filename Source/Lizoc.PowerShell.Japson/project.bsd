@@ -1,0 +1,16 @@
+#include cslib,cscmdlet
+projectType = 'dotnet'
+product = 'Lizoc .NET Developer Tools'
+clsCompliant = false
+allowPartialTrust = false
+psManifestFile = 'PowerDevelop.psd1'
+description = 'Lizoc PowerShell Utility (JAPSON)'
+frameworks {
+	'netstandard1.4' {
+		dependencies {
+			'Standard.Data.Japson' {
+				target = 'project'
+			}
+		}
+	}
+}

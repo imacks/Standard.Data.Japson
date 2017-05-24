@@ -1,0 +1,18 @@
+ExpectPositiveNumber|en-US|Expects a positive number: {0}
+BadBooleanName|en-US|Unable to parse boolean value: {0}
+ErrNullCurrentNode|en-US|Current node should not be null.
+ErrSelfReferencingFallback|en-US|An element cannot fallback to itself, because it will cause a circular reference.
+ErrUnresolvedSubstitution|en-US|Unresolved substitution: {0}
+ErrUnexpectedEOF|en-US|End of file reached while trying to read a value.
+ErrBadJapsonSyntax|en-US|Syntax error: {0}`n{1}
+ErrObjectUnexpectedEOF|en-US|Expected end of object but reached end of file: {0}
+ErrUnknownToken|en-US|Unknown token: {0}
+ErrExpectEndOfObject|en-US|Expected end of object: {0}
+ErrExpectEndOfTripleQuote|en-US|Expected end of triple quoted string: {0}
+ErrExpectEndOfQuote|en-US|Expected end of quoted string: {0}
+ErrUnknownEscapeCode|en-US|Unknown escape code "{0}": {1}
+ErrUnexpectedValue|en-US|Unexpected value (valid value types are: {0}): {1}
+ErrExpectSimpleValue|en-US|No simple value found: {0}
+Err_GetKeysFromNonJapsonObject|en-US|Cannot get keys because the underlying type is not a JapsonObject.
+Err_PathCannotHaveDoubleSeparator|en-US|Path expression cannot contain consecutive separators.
+Err_PathCannotStartEndWithSeparator|en-US|Path expression cannot start or end with a separator symbol.

@@ -1,0 +1,58 @@
+autodoc {
+	shared {
+		botName = 'Betty'
+		companyFullname = ${company}
+		year = ${year}
+		repoName = ${repoName}	
+	}
+	'LICENSE.txt' {
+		dummy = 'foo'
+	}
+	'THIRD-PARTY-LICENSE.txt' {
+		licenseRequestEmail = 'thirdpartylicense@lizoc.com'
+		licenses {
+			'HOCON.NET' = ${projectPath}'/Resources/lic-hoconnet.txt'
+		}
+	}
+	'Docs/contributing-g.md' {
+		dummy = 'foo'
+	}
+	'Docs/contributing-workflow-g.md' {
+		upForGrabs = 'https://github.com/buildcenter/Standard.Data.Japson/labels/up-for-grabs'
+		buildServer = 'https://build.lizoc.com'
+	}
+	'Docs/contributor-conduct-g.md' {
+		reporting = 'opensourceconduct@lizoc.com'
+		contributorCovenantVersion = '1.3.0'
+		contributorCovenantUrl = 'http://contributor-covenant.org/version/1/3/0/'
+	}
+	'Docs/distro-license-g.txt' {
+		title = 'LIZOC SOFTWARE LICENSE TERMS'
+		projectName = 'JAPSON PROJECT'
+		author = 'Lizoc'
+		privacyUrl = 'https://www.lizoc.com/privacy'
+		exportControlUrl = 'https://www.lizoc.com/exportcontrol'
+	}
+	'Docs/contributor-license-agreement-g.md' {
+		dummy = 'foo'
+	}
+	'Docs/issue-guide-g.md' {
+		labelsUrl = 'https://github.com/buildcenter/Standard.Data.Japson/labels'
+		apiApprovedUrl = 'https://github.com/buildcenter/Standard.Data.Japson/labels/approved'
+		projectForum = 'http://www.reddit.com/buildcenter'
+	}
+	'Docs/code-owners-g.md' {
+		updater {
+			handle = '@IMacks'
+			url = 'http://github.com/imacks'
+		}
+		owners {
+			'Meta' {
+				users {
+					'@imacks' = 'https://github.com/imacks'
+				}
+				text = 'Issues without clear association to any specific API, e.g. new feature proposals, cross-cutting code/test pattern changes, project-wide docs. **Triage in progress**'
+			}
+		}
+	}
+}

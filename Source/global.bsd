@@ -1,0 +1,37 @@
+projectType = 'ignore'
+
+# ------------------
+# Defaults
+# ------------------
+year = '2017'
+repoName = 'Japson Project'
+
+# ------------------
+# Version management
+# ------------------
+version-major = 1
+version-minor = 2
+version-revision = 0
+version-suffix = '-beta'
+
+# do not specify 'version-build' if you want the build number to auto increment with every build
+# for fixed build number, specify it here and delete the 'Source/buildnum.ini' file.
+# version-build = 0
+
+
+# ------------------
+# Branding
+# ------------------
+company = 'Lizoc Inc.'
+product = 'Lizoc Standard Framework'
+authors = [
+	'Lizoc'
+]
+trademark = 'Lizoc StandardFX'
+publicKeyToken = '0024000004800000940000000602000000240000525341310004000001000100bd215f1ff1ac4aa2795fb7d7ef3fe4926b7cc4f316b87f7d0ef1b1923c05712454de1a7584918960464143bb0e081c55d832b9cd24116924281360b5a8356d15ca91298a952dfb48e58aa9dfbad79a17f6f68d97288d02abeff5644d150854395a91287419a2a18787513c92a7fe17ea1ed87d140114cfc38da2c8176064d4b5'
+comGuid = ''
+packOptions {
+	tags = ['lizoc']
+	owners = ['lizoc']
+	projectUrl = 'http://lizoc.github.io/standard.data.japson'
+}

@@ -1,0 +1,9 @@
+#include cslib,net462,csxunit,csxunit-net462,csxunit-netstandard
+projectType = 'dotnet'
+clsCompliant = false
+allowPartialTrust = false
+dependencies {
+	'Standard.Data.Japson' {
+        target = 'project'
+    }
+}
