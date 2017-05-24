@@ -12,7 +12,7 @@ A quick compare-and-contrast:
     "foo": "abc",
     "bar": "abc\ndef",
     "taz": {
-        "z" = "abcabc"
+        "z": "abcabc"
     }
 }
 ```

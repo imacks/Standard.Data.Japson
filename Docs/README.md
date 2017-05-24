@@ -32,7 +32,7 @@ JAPSON is a JSON dialect that is easier to write. You can [read more about it he
 
 ## Legal Info
 - [Project License](../LICENSE.txt)
-- [Third Party Licenses](../THIRD-PARTY-LICENSES.txt)
+- [Third Party Licenses](../THIRD-PARTY-LICENSE.txt)
 - [Contributor License Agreement](contributor-license-agreement-g.md)
 - [Distro License](distro-license-g.txt)
 
