@@ -9,7 +9,7 @@ A quick compare-and-contrast:
 
 ```JSON
 {
-    "foo": abc,
+    "foo": "abc",
     "bar": "abc\ndef",
     "taz": {
         "z" = "abcabc"
@@ -17,17 +17,19 @@ A quick compare-and-contrast:
 }
 ```
 
-If you have written JSON by hand, you will probably have experienced these gotchas:
+If you have written JSON by hand, you probably have experienced these:
 
-- forgot to write a comma delimiter, or had an extra the comma delimiter.
-- forgot to "quote" your key
+- forget a comma delimiter, or had an extra comma delimiter
+- tirelessly "quoting" your keys and strings
 - got lost with escape characters
-- find yourself copy-and-pasting a lot sometimes
+- no place to write your comments
+- wishing for variables like you do with CSS
 
-Here's a rewrite in JAPSON:
+The answer? JAPSON!
 
 ```JSON
 foo = abc
+# a comment!
 bar = """abc
 def"""
 taz {
@@ -35,15 +37,29 @@ taz {
 }
 ```
 
-Seriously, it is like writing an INI file.
+Seriously, it is like writing an INI file, but with comments, multi-line, variables and stuff.
 
-What's more! JAPSON is a superset of JSON, so your existing JSON text is also recognized. 
+What's more! JAPSON is a superset of JSON, so your existing JSON text works as well.
+
+
+
+Getting started
+---------------
+The latest package is [available on NuGet](https://www.nuget.org/packages/Standard.Data.Japson). Simply reference it in your .NET project file or `packages.config`.
+
+If you are interested in working with Japson inside PowerShell, the latest module is hosted on PowerShell Gallery:
+
+```PowerShell
+Install-Package PSJapson
+```
 
 
 
 More details
 ------------
 Read [more examples](./Docs/conceptual/japson-example.md) here, or see [the whole spec](./Docs/conceptual/japson-spec.md).
+
+The documentation index is [here](./Docs/README.md).
 
 
 

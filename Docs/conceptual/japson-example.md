@@ -1,53 +1,59 @@
-## simple-lib/reference.japson
+Examples
+========
+Here are some samples to get a feel of how Japson files look like.
+
+We are going to load the following Japson files in the order they appear.
+
+
+## myawesomelib/config.japson
 
 ```
-simple-lib {
-    foo = "This value comes from simple-lib's reference.japson"
-    hello = "This value comes from simple-lib's reference.japson"
-    whatever = "This value comes from simple-lib's reference.japson"
+my-awesome-lib {
+    foo = "I am from myawesomelib/config.japson"
+    hello = "I am from myawesomelib/config.japson"
+    bar = "I am from myawesomelib/config.japson"
 }
 ```
 
-## simple-app/reference.japson
+## awesomeapp/config.japson
 
 ```
-# these are our own config values defined by the app
-simple-app {
-    answer=42
+# this won't be affected by anything before it, because it is a unique name
+awesome-app {
+    the-answer = 42
 }
 
-# Here we override some values used by a library
-simple-lib.foo="This value comes from simple-app's application.conf"
-simple-lib.whatever = "This value comes from simple-app's application.conf"
+# Let's override some vars!
+my-awesome-lib.foo = "I am from awesomeapp/config.japson"
+my-awesome-lib.bar = "I am from awesomeapp/config.japson"
 ```
 
-## complex-app/reference.japson
+## golden-hammer-app/config.japson
 
 ```
-# these are our own config values defined by the app
-complex-app {
-    something="This value comes from complex-app's complex1.conf"
+# this won't be affected by anything before it, because it is a unique name
+golder-hammer-app {
+    caret = 24
 }
 
-# Here we override some values used by a library
-simple-lib.foo="This value comes from complex-app's complex1.conf"
-simple-lib.whatever = "This value comes from complex-app's complex1.conf"
+# More overrides
+my-awesome-lib.foo = "I am from golder-hammer-app/config.japson"
+my-awesome-lib.hello = "I am from golden-hammer-app/config.japson"
 ```
 
-## complex-app/reference2.japson
+## golden-hammer-app/config2.japson
 
 ```
-complex-app {
-    something="This value comes from complex-app's complex2.conf"
+golder-hammer-app {
+    caret = 18
 
-    # here we want a simple-lib-context unique to our app
-    # which can be custom-configured. In code, we have to
-    # pull out this subtree and pass it to simple-lib.
-    simple-lib-context = {
-        simple-lib {
-            foo="This value comes from complex-app's complex2.conf in its custom simple-lib-context"
-            whatever = "This value comes from complex-app's complex2.conf in its custom simple-lib-context"
-        }
-    }
+    # here 'libconfig' will get all the properties of 'my-awesome-lib'.
+    # then, we customize the 'bar' property.
+	my-context {
+		libconfig = ${my-awesome-lib}
+		libconfig {
+			bar = "I am from golden-hammer-app/config2.japson"
+		}
+	}
 }
 ```
