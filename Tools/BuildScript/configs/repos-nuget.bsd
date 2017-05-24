@@ -1,0 +1,8 @@
+repos {
+    nuget {
+        sources {
+            'dotnet-core' = 'https://dotnet.myget.org/F/dotnet-core/api/v3/index.json'
+            'NuGet.org (v3)' = 'https://api.nuget.org/v3/index.json'
+        }
+    }
+}

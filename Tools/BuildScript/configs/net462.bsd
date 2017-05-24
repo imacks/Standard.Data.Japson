@@ -1,0 +1,20 @@
+frameworks {
+    net462 {
+        buildOptions {
+            define = ['NETFX', 'NET462']
+            debugType = 'full'
+        }
+        analyzerOptions {
+            languageId = 'cs'
+        }
+        frameworkAssemblies {
+            "System" = '4.0.0'
+            "System.Core" = '4.0.0'
+            "System.Xml.Linq" = '4.0.0'
+            "System.Data.DataSetExtensions" = '4.0.0'
+            "Microsoft.CSharp" = '4.0.0'
+            "System.Data" = '4.0.0'
+            "System.Xml" = '4.0.0'
+        }
+    }
+}

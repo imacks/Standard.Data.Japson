@@ -1,0 +1,15 @@
+frameworks {
+    'netstandard1.4' {
+        buildOptions {
+            define = ['NETSTANDARD', 'NETSTANDARD1_4']
+            debugType = 'full'
+            allowUnsafe = true
+        }
+        dependencies {
+            'Microsoft.PowerShell.5.ReferenceAssemblies' = '1.0.0'
+            'Microsoft.NETCore' = '5.0.1-*'
+            'Microsoft.NETCore.Portable.Compatibility' = '1.0.1'
+        }
+        imports = ['net40']
+    }
+}

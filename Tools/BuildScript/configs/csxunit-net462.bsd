@@ -1,0 +1,7 @@
+frameworks {
+    net462 {
+        buildOptions {
+            define = ['UNITTEST']
+        }
+    }
+}

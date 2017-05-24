@@ -1,0 +1,33 @@
+frameworks {
+    'netcoreapp1.1' {
+        imports = [
+            'dnxcore50'
+            'portable-net45+win8'
+        ]
+        buildOptions {
+            define = ['UNITTEST', 'NETSTANDARD']
+        }
+        dependencies {
+            'System.Runtime.Serialization.Primitives' {
+                version = '4.3.0'
+                type = default
+            }
+            'System.Runtime.Serialization.Json' {
+                version = '4.3.0'
+                type = default
+            }
+            'System.Xml.XmlSerializer' {
+                version = '4.3.0'
+                type = default
+            }
+            'System.Runtime.Serialization.Xml' {
+                version = '4.3.0'
+                type = default
+            }
+            'Microsoft.NETCore.App' {
+                version = '1.1.2'
+                type = 'platform'
+            }
+        }
+    }
+}

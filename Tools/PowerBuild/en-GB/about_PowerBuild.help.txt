@@ -1,0 +1,81 @@
+﻿TOPIC
+    PowerBuild
+
+SYNOPSIS
+    Build system based on Powershell
+
+VERSION
+    You are running version 1.0 of PowerBuild :)
+
+    1.0.100.0
+    ---------
+    [NEW] Initial release.
+
+SHORT DESCRIPTION
+    PowerBuild is a source code build system based on PowerShell.
+
+INSTALLATION
+    The best option is to use the installer. If you are a savy scripter, try the headless options.
+
+    # Using the installer
+
+    1. IMPORTANT! ** DO NOT ** click on Install.cmd in the archive.
+
+    2. Delete the PowerExtend installation folder if you already have a previous copy installed.
+
+    3. Extract Install.cmd to a local path. Path cannot have spaces and must be accessible to the administrators group. Same goes for the path to this zip package.
+
+    4. Double click on the extracted Install.cmd
+
+    5. Follow instructions.
+
+    ---------------------
+
+    YOUR WORK IS DONE. STOP READING. THE REST IS FOR SCRIPTING GURUS
+
+    # Headless install
+
+    1. Install.cmd C:\Full\Path\To\PowerBuild.zip
+
+    2. Your terminal needs to be running in escalated mode in order to avoid the UAC prompt.
+
+
+    # Portable app
+
+    1. If you have installed PowerPackman, use the command 'Install-PortableApp'.
+
+    2. Install-PortableApp -Source PowerBuild.zip -Profile 'Install-AllUser'
+
+
+    # Manual installation
+
+    If the installer didn't work out, you can also try a manual installation.
+
+    1. Copy the 'PowerBuild' folder in archive to Documents\WindowsPowerShell\Modules.
+    So you get 'Documents\WindowsPowerShell\Modules\PowerBuild\PowerBuild.psd1', ...
+
+    2. WIN+Run PowerShell, then in an escalated terminal, type in: Set-ExecutionPolicy Unrestricted
+
+    3. To see a list of available commands: Get-Command -Module PowerBuild
+
+LINKS
+    Our project home on the web:
+    http://www.github.com/lizoc/PowerBuild
+
+    This PowerShell module project is generated using
+    [PowerDev](http://www.github.com/lizoc/PowerDev)
+
+SEE ALSO
+    about_PowerDev
+
+COPYRIGHT
+    Copyright (c) 2016. All rights reserved.
+
+LICENSE
+    The MIT License (MIT)
+    ---------------------
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

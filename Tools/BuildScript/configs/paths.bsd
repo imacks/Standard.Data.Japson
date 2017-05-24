@@ -1,0 +1,4 @@
+DotNetCoreDir = 'E:/bin/dotnetcore/1.0.4'
+WorkingPkgDir = 'E:/pkgs/nuget'
+LocalPackageOutputDir = 'E:/pkgs/nuget-local'
+CredentialDir = 'E:/Credentials/builder'

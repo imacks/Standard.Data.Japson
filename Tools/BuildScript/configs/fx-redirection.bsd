@@ -1,0 +1,5 @@
+framework-redirection {
+    tests {
+        'netstandard*' = 'netcoreapp1.0'
+    }
+}

@@ -1,0 +1,75 @@
+name = ${projectDir}
+title = ${name}
+copyright = 'Copyright © '${year}' '${company}' All rights reserved.'
+description = ${product}
+version = ${version-major}'.'${version-minor}'.'${version-build}'.'${version-revision}${version-suffix}
+embedInteropTypes = false
+clsCompliant = true
+allowPartialTrust = true
+internalsVisibleTo = []
+language = 'en-US'
+buildOptions {
+    compilerName = 'csc'
+    compile {
+        include = [
+            'Properties/**/.cs'
+            'Source/**/.cs'
+        ]
+    }
+    embed {
+        include = [
+            'Embed/**'
+        ]
+    }
+    copyToOutput {
+        include = [
+            'Resources/**'
+        ]
+    }
+    nowarn = ['CS1591', 'CS0168']
+    emitEntryPoint = false
+    warningsAsErrors = true
+    allowUnsafe = true
+    preserveCompilationContext = false
+    platform = 'AnyCPU'
+    languageVersion = '6'
+    xmlDoc = true
+    delaySign = false
+}
+configurations {
+    Debug {
+        buildOptions {
+            optimize = false
+            publicSign = false
+            define = ['TRACE', 'DEBUG']
+        }
+    }
+    Release {
+        buildOptions {
+            optimize = true
+            publicSign = true
+            keyFile = ${credentialDir}'/Credential/EcmaPrivateKey.snk'
+        }
+    }
+}
+packOptions {
+    summary = ${description}
+    releaseNotes = ${packOptions.projectUrl}'/releasenotes'
+    iconUrl = ${packOptions.projectUrl}'/icon.png'
+    licenseUrl = ${packOptions.projectUrl}'/license'
+    requireLicenseAcceptance = false
+    repository {
+        type = 'git'
+        url = ${packOptions.projectUrl}
+    }
+    files {
+        mappings {
+            '/' {
+                includeFiles = [
+                    ${repoDir-relative}'/LICENSE.txt'
+                    ${repoDir-relative}'/THIRD-PARTY-LICENSE.txt'
+                ]
+            }
+        }
+    }
+}
