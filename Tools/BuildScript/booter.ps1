@@ -519,8 +519,12 @@ task Build -depends Discovery {
 
             $testProjectBsdIncludeFiles = ResolveProjectBsdFileList -UseGlobalBsd:$PowerBuild.HasGlobalBsdFile -GlobalBsdPath $PowerBuild.GlobalBsdFile -ProjectBsdPath $testProjectBsdFile
             $testProjectInfo = ParseBsdFiles -BsdFiles $testProjectBsdIncludeFiles -Prefix @{
-                'projectDir' = $testProjectName
+	            'repoName' = $PowerBuild.RepoName
+	            'repoDir' = $PowerBuild.RepoDir.Replace('\', '/').TrimEnd('/')
                 'repoDir-relative' = $repoRelativeDir
+                'projectDir' = $testProjectName
+	            'projectPath' = $testProjectDir.Replace('\', '/').TrimEnd('/')
+	            'credentialDir' = $PowerBuild.CredentialDir
                 'version-build' = $PowerBuild.GlobalBuildNum
             }
         }
@@ -543,7 +547,7 @@ task Build -depends Discovery {
             TestProjectName = $testProjectName
             TestProjectDir = $testProjectDir
             TestProjectBsdFile = $testProjectBsdFile
-
+            CredentialDir = $PowerBuild.CredentialDir
         }
 
         Invoke-PowerBuild (Join-Path $PSScriptRoot -ChildPath "builder-$($projectInfo.projectType).ps1") -NoLogo -Properties $builderProperties
