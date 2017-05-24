@@ -5,20 +5,20 @@ allowPartialTrust = false
 frameworks {
 	net462 {
 		copyToOutput {
-        	mappings {
-            	'App.config' = 'Properties/App.config'
-          	}
-        }
-      	frameworkAssemblies {
-        	'System.Configuration' = '4.0.0'
-      	}
-      	dependencies {
-      		'Standard.Configuration.Japson' {
-      			target = 'project'
-      		}
-      		'Standard.Data.Japson' {
-      			target = 'project'
-      		}
-      	}
+    	mappings {
+        'App.config' = 'Properties/App.config'
+      }
+    }
+    frameworkAssemblies {
+      'System.Configuration' = '4.0.0'
+    }
+    dependencies {
+  		'Standard.Configuration.Japson' {
+  			target = 'project'
+  		}
+  		'Standard.Data.Japson' {
+  			target = 'project'
+  		}
+    }
 	}
 }
