@@ -182,7 +182,7 @@ namespace <%= $Data.AssemblyName %>
                     if (resSet != null)
                        supportedCultures.Add(culture);
                 }
-                catch (CultureNotFoundException ex)
+                catch (CultureNotFoundException)
                 {
                 }
             }
