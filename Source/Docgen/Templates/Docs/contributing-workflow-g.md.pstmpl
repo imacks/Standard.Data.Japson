@@ -7,7 +7,7 @@ Getting Started
 ===============
 If you are looking at getting your feet wet with some simple (but still beneficial) changes, check out [_up for grabs_ issues](<%= $Data.upForGrabs %>). 
 
-For new ideas, please always start with an issue before starting development of an implementation. See [project priorities](project-priorities.md) to understand the our approach to engagement on general improvements to the product. Use [Code Owners](code-owners.md) to find relevant maintainers and @ mention them to ask for feedback on your issue.
+For new ideas, please always start with an issue before starting development of an implementation. See [project priorities](roadmap.md) to understand the our approach to engagement on general improvements to the product. Use [Code Owners](code-owners.md) to find relevant maintainers and @ mention them to ask for feedback on your issue.
 
 You do not need to file an issue for trivial changes (e.g. typo fixes). Just create a PR for those changes.
 
@@ -28,7 +28,7 @@ Typos are embarrassing! We will accept most PRs that fix typos. In order to make
 
 Coding Style Changes
 --------------------
-We pay attention to the style guidelines described in [Coding Style](coding-style.md). We ask that you use the tools available in this project to ensure code style conformance before making a commit.
+We pay attention to the style guidelines described in [Coding Style](csharp-coding-style.md). We ask that you use the tools available in this project to ensure code style conformance before making a commit.
 
 Despite best efforts, code that is already checked in may not conform to our code style for one reason or another. Therefore, we also ask that you:
 

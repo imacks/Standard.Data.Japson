@@ -6,7 +6,7 @@ We will have the following branches in the repository:
 * Where most development happens.
 * Submit your PRs here.
 
-**release/[name]**
+**stable/[name]**
 * Release branches snapped from master.
 * Do not submit pull requests to these branches.
 * Fixes here do not flow to follow-up releases.
