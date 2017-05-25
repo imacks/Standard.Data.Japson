@@ -11,7 +11,7 @@ namespace Lizoc.PowerShell.Commands
 {
     [Cmdlet(
         VerbsData.ConvertFrom, "Japson", 
-        HelpUri = "http://docs.lizoc.com/powerdev/cmd/convertfromjapson",
+        HelpUri = "http://docs.lizoc.com/ps/convertfromjapson",
         RemotingCapability = RemotingCapability.None
     ), OutputType(typeof(PSObject))]
     public class ConvertFromJapsonCommand : Cmdlet
