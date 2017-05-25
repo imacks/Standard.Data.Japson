@@ -696,7 +696,7 @@ task UnitTest -depends Compile -precondition { $HasTestProject -eq $true } {
     }
 }
 
-task Pack -depends Compile, UnitTest -precondition { $Configuration -eq 'Release' } {
+task Pack -depends Compile, UnitTest -precondition { $Configuration -in @('Release', 'Publish') } {
     if (-not (Test-Path $PowerBuild.OutputSymbolsDir -PathType Container))
     {
         if (Test-Path $PowerBuild.OutputSymbolsDir -PathType Leaf)
@@ -751,7 +751,7 @@ task Pack -depends Compile, UnitTest -precondition { $Configuration -eq 'Release
     }
 }
 
-task Publish -depends Pack -precondition { $Configuration -eq 'Release' } {
+task Publish -depends Pack -precondition { $Configuration -in @('Release', 'Publish') } {
     $pkgUploadFile = Join-Path $PowerBuild.OutputDir -ChildPath ('{0}.{1}.nupkg' -f $ProjectName, $PowerBuild.PkgFileVersion)
 
     say ('[i] Copying package to local storage: {0} -> {1}' -f $pkgUploadFile, $PowerBuild.LocalPackageOutputDir)
@@ -763,24 +763,32 @@ task Publish -depends Pack -precondition { $Configuration -eq 'Release' } {
         }
         md $PowerBuild.LocalPackageOutputDir | Out-Null
     }
-    copy $pkgUploadFile $PowerBuild.LocalPackageOutputDir -Force
+    copy $pkgUploadFile $PowerBuild.LocalPackageOutputDir.Replace('/', '\') -Force
 
     if ($PowerBuild.UploadToNuget)
     {
         say ('[i] Pusing package to NuGet server: {0}' -f $pkgUploadFile)
         dotnet nuget push $pkgUploadFile --api-key $PowerBuild.NugetConfig.ApiKey --source $PowerBuild.NugetConfig.PushSource       
     }
+    else
+    {
+        say ('[i] Test package will not be published to the web.')    
+    }
 
     if ($HasTestProject)
     {
         $pkgTestUploadFile = Join-Path $PowerBuild.OutputDir -ChildPath ('{0}.Tests.{1}.nupkg' -f $ProjectName, $PowerBuild.PkgTestFileVersion)
-        say ('[i] Copying package to local storage: {0} -> {1}' -f $pkgTestUploadFile, $PowerBuild.LocalPackageOutputDir)
+        say ('[i] Copying unit test package to local storage: {0} -> {1}' -f $pkgTestUploadFile, $PowerBuild.LocalPackageOutputDir)
         copy $pkgTestUploadFile $PowerBuild.LocalPackageOutputDir -Force
 
         if ($PowerBuild.UploadToNuget)
         {
-            say ('[i] Pushing package to NuGet server: {0}' -f $pkgTestUploadFile)
+            say ('[i] Pushing unit test package to NuGet server: {0}' -f $pkgTestUploadFile)
             dotnet nuget push $pkgTestUploadFile --api-key $PowerBuild.NugetConfig.ApiKey --source $PowerBuild.NugetConfig.PushSource
+        }
+        else
+        {
+            say ('[i] Test package will not be published to the web.')      
         }
     }
 }
